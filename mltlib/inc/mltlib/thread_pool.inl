@@ -32,7 +32,7 @@ namespace mltlib {
 		m_threads.clear();
 	}
 
-	MLTLIB_INLINE bool thread_pool::busy() {
+	MLTLIB_INLINE bool thread_pool::busy() const {
 		return m_jobs.empty();
 	}
 

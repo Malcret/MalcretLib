@@ -5,17 +5,19 @@
 #endif // !MLTLIB_HEADER_ONLY
 
 namespace mltlib {
-	constexpr std::string to_string(const std::string &str) {
-		return str;
+	MLTLIB_INLINE std::wstring string_to_wstring(const std::string &str) {
+		std::wstring wstr;
+		size_t size;
+		wstr.resize(str.length());
+		mbstowcs_s(&size, &wstr[0], wstr.size() + 1, str.c_str(), str.size());
+		return wstr;
 	}
 
-	template<typename... Args>
-	constexpr std::string concat(Args &&...args) {
-		std::string concatenated_string;
-		using std::to_string;
-		using mltlib::to_string;
-		int unpack[] { (concatenated_string += to_string(args), 0)... };
-		static_cast<void>(unpack);
-		return concatenated_string;
+	MLTLIB_INLINE std::string wstring_to_string(const std::wstring &wstr) {
+		std::string str;
+		size_t size;
+		str.resize(wstr.length());
+		wcstombs_s(&size, &str[0], str.size() + 1, wstr.c_str(), wstr.size());
+		return str;
 	}
 }

@@ -11,14 +11,14 @@
 namespace mltlib {
 	class MLTLIB_API thread_pool {
 	public:
-		thread_pool(size_t pool_size = max_threads());
-		~thread_pool();
+		MLTLIB_INLINE thread_pool(size_t pool_size = max_threads());
+		MLTLIB_INLINE ~thread_pool();
 
-		void queue(const std::function<void()> &job);
-		void stop();
-		bool busy();
+		MLTLIB_INLINE void queue(const std::function<void()> &job);
+		MLTLIB_INLINE void stop();
+		MLTLIB_INLINE bool busy() const;
 
-		static size_t max_threads();
+		MLTLIB_INLINE static size_t max_threads();
 
 	private:
 		bool m_should_terminate;
@@ -28,7 +28,7 @@ namespace mltlib {
 		std::vector<std::thread> m_threads;
 		std::queue<std::function<void()>> m_jobs;
 
-		void loop();
+		MLTLIB_INLINE void loop();
 	};
 }
 
