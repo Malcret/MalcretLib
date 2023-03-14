@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef MLTLIB_HEADER_ONLY
-	#include <mltlib/string.hpp>
+#	include <mltlib/string.hpp>
 #endif // !MLTLIB_HEADER_ONLY
 
 namespace mltlib {

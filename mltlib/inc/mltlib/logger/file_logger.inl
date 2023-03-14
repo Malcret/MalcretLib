@@ -1,15 +1,15 @@
 #pragma once
 
 #ifndef MLTLIB_HEADER_ONLY
-	#include <mltlib/logger/file_logger.hpp>
+#	include <mltlib/logger/file_logger.hpp>
 #endif // !MLTLIB_HEADER_ONLY
 
 #include <stdio.h>
 
 namespace mltlib {
 	namespace logger {
-		MLTLIB_INLINE file_logger::file_logger(FILE *output)
-			: m_output(output), m_severity_filter(severity_level::LOG_SEVERITY_INFO) {}
+		MLTLIB_INLINE file_logger::file_logger(const std::string &name, FILE *output)
+			: m_name(name), m_output(output), m_severity_filter(severity_level::LOG_SEVERITY_INFO) {}
 
 		MLTLIB_INLINE void file_logger::set_severity_filter(severity_level severity) {
 			m_severity_filter = severity;

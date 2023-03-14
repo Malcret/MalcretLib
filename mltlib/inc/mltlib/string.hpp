@@ -21,5 +21,5 @@ namespace mltlib {
 }
 
 #ifdef MLTLIB_HEADER_ONLY
-	#include <mltlib/string.inl>
+#	include <mltlib/string.inl>
 #endif // MLTLIB_HEADER_ONLY
