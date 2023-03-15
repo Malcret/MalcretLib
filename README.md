@@ -53,6 +53,8 @@ int main() {
 }
 ```
 
+Output :
+
 ```
 [10:38:17] async_file_logger, TRACE: iteration : 0
 ...
