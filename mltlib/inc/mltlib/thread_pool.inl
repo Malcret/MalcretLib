@@ -4,6 +4,8 @@
 #	include <mltlib/thread_pool.hpp>
 #endif // !MLTLIB_HEADER_ONLY
 
+#include <condition_variable>
+
 namespace mltlib {
 	MLTLIB_INLINE thread_pool::thread_pool(size_t pool_size)
 		: m_pool_size(pool_size), m_threads(pool_size), m_should_terminate(false) {

@@ -8,7 +8,7 @@
 #include <iostream>
 
 namespace mltlib {
-	std::string read_file_to_buffer(const std::string &filePath) {
+	MLTLIB_INLINE std::string read_file_to_buffer(const std::string &filePath) {
 		// Open file
 		std::ifstream file(filePath, std::ios::binary);
 		if (!file.is_open()) {
@@ -28,5 +28,10 @@ namespace mltlib {
 		file.close();
 
 		return buffer;
+	}
+
+	MLTLIB_INLINE void write_to_file(FILE *output, const std::string &str) {
+		fwrite(str.c_str(), sizeof(char), str.size(), output);
+		fflush(output);
 	}
 }

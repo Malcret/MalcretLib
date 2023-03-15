@@ -15,7 +15,7 @@ namespace mltlib {
 		using std::to_string;
 		using mltlib::to_string;
 		int unpack[]{ (concatenated_string += to_string(args), 0)... };
-		static_cast<void>(unpack);
+		(void)unpack;
 		return concatenated_string;
 	}
 }

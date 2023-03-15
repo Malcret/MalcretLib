@@ -4,20 +4,11 @@
 #	include <mltlib/logger/file_logger.hpp>
 #endif // !MLTLIB_HEADER_ONLY
 
-#include <stdio.h>
+namespace mltlib::logger {
+	MLTLIB_INLINE file_logger::file_logger(const std::string &name, FILE *output)
+		: logger(name), m_output(output) {}
 
-namespace mltlib {
-	namespace logger {
-		MLTLIB_INLINE file_logger::file_logger(const std::string &name, FILE *output)
-			: m_name(name), m_output(output), m_severity_filter(severity_level::LOG_SEVERITY_INFO) {}
-
-		MLTLIB_INLINE void file_logger::set_severity_filter(severity_level severity) {
-			m_severity_filter = severity;
-		}
-
-		MLTLIB_INLINE void file_logger::log_to_file(const std::string &msg) const {
-			fwrite(msg.c_str(), sizeof(char), msg.size(), m_output);
-			fflush(m_output);
-		}
+	MLTLIB_INLINE void file_logger::_log(const std::string &msg) const {
+		write_to_file(m_output, msg);
 	}
 }

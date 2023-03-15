@@ -29,7 +29,6 @@
 #	define MLTLIB_FORCE_INLINE
 #else // MLTLIB_HEADER_ONLY
 #	define MLTLIB_API
-#	define MLTLIB_HEADER_ONLY
 #	define MLTLIB_INLINE inline
 #	define MLTLIB_FORCE_INLINE __forceinline
 #endif // !MLTLIB_HEADER_ONLY
