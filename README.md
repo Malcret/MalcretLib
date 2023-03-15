@@ -2,7 +2,7 @@
 General purpose library for C++20 or higher only.
 
 ### Contains :
-- A simple, fast and thread safe logger, a 100'000 log in about 3s on my computer and a little less for the async implementation.
+- A simple, fast and thread safe logger, a 100'000 logs in about 3s on my computer and a little less for the async implementation.
 - A simple thread pool.
 - Some quality of life functions.
 - More to come in the future (I'm writing them when I need them for other project).
