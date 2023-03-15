@@ -34,7 +34,7 @@ Output :
 [10:38:19] file_logger, TRACE: iteration : 99999
 ```
 
-### Async logger usage example (using the included thread pool) :
+### Async logger usage example :
 
 ```
 #include <mltlib/logger/async_file_logger.hpp>
